@@ -1,18 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import App from './Components/App/App'
 import './index.css';
-import {BusinessList} from './Components/Business/Business';
-import SearchBar from './Components/SearchBar/SearchBar';
+
 
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  <React.StrictMode>
-    <SearchBar />
-    <BusinessList />
-  </React.StrictMode>
+  <App/>
 );
 
 // If you want to start measuring performance in your app, pass a function
