@@ -1,34 +1,34 @@
 import React from "react";
 import "./Business.css";
 
-function Business(props) {
+function Business({ business }) {
   return (
-    <div class="w3-quarter">
-      <img alt={props.name} src={props.image} style={{ width: "100%" }} />
-      <h3 className="name">{props.name}</h3>
+    <div className="w3-quarter">
+      <img alt={business.name} src={business.image} style={{ width: "100%" }} />
+      <h3 className="name">{business.name}</h3>
       <label className="infoLabel">
-        Address<label className="info">{props.address}</label>
+        Address<label className="info">{business.address}</label>
       </label>
       <label className="infoLabel">
-        City<label className="info">{props.city}</label>
+        City<label className="info">{business.city}</label>
       </label>
       <label className="infoLabel">
-        State<label className="info">{props.state}</label>
+        State<label className="info">{business.state}</label>
       </label>
       <label className="infoLabel">
-        Zipcode<label className="info">{props.zipcode}</label>
+        Zipcode<label className="info">{business.zipcode}</label>
       </label>
       <label className="infoLabel">
-        Category<label className="info">{props.category}</label>
+        Category<label className="info">{business.category}</label>
       </label>
       <label className="infoLabel">
-        Rating<label className="info">{props.rating}</label>
+        Rating<label className="info">{business.rating}</label>
       </label>
       <label className="infoLabel">
-        Review<label className="info">{props.review}</label>
+        Review<label className="info">{business.review}</label>
       </label>
       <label className="infoLabel">
-        Number<label className="info">{props.count}</label>
+        Number<label className="info">{business.count}</label>
       </label>
     </div>
   );
@@ -36,7 +36,7 @@ function Business(props) {
 
 Business.defaultProps = {
   image: "https://content.codecademy.com/programs/react/ravenous/pizza.jpg",
-  name: "Will's Business",
+  name: "Will's Example Business",
   address: "1 Main street",
   city: "London",
   state: "London",

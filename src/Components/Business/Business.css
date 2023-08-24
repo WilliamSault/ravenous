@@ -1,0 +1,16 @@
+.infoLabel {
+    display: flex; /* makes it a flex container */
+    justify-content: space-between; /* pushes child elements to the edges of the container */
+    align-items: center; /* vertically centers child elements */
+    width: 100%; /* uses the full width of the container */
+    margin-bottom: 0; /* adds some space between each label group */
+  }
+  
+  /* Style for the label containing the data */
+  .info {
+    flex-shrink: 0; /* prevents it from shrinking if space is tight */
+    margin-left: 20px; /* adds some space between the title and the data */
+    font-weight: bold; /* makes it bold (optional) */
+  }
+  
+  
