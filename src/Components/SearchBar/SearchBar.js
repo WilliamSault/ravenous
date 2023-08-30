@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./SearchBar.css";
-import { SortOptions } from "../../YelpAPI.js";
+import { SortOptions } from "../../utils.js";
 
-function SearchBar() {
+function SearchBar({ onSubmit }) {
   const [term, setTerm] = useState("");
   const handleTermChange = ({ target }) => {
     setTerm(target.value);
   };
 
   const [location, setLocation] = useState("");
+  const [locationError, setLocationError] = useState(false);
   const handleLocationChange = ({ target }) => {
     setLocation(target.value);
+    setLocationError(false);
   };
   const [sorting, setSorting] = useState(SortOptions.BEST_MATCH);
   const handleSortingChange = ({ target }) => {
@@ -19,9 +21,11 @@ function SearchBar() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(
-      `/business/search?term=${term}?location=${location}?sort_by=${sorting}`
-    );
+    if (location) {
+      onSubmit(term, location, sorting);
+    } else {
+      setLocationError(true);
+    }
   };
   return (
     <div className="w3-top">
@@ -86,6 +90,9 @@ function SearchBar() {
           </label>
           <br />
           <input type="submit" value="Search" />
+          {locationError && (
+            <div style={{ color: "red" }}>Please enter a location.</div>
+          )}
         </form>
       </div>
     </div>

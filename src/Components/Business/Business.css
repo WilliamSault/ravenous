@@ -13,4 +13,21 @@
     font-weight: bold; /* makes it bold (optional) */
   }
   
+  img {
+    max-width: 100%; /* ensures the image doesn't overflow its container */
+    height: auto; /* maintains aspect ratio */
+    min-height: 150px; /* ensures a minimum height */
+    object-fit: cover; /* covers the entire area */
+  }
+  
+  .name {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .image-container {
+    height: 150px; /* Or any fixed height you prefer */
+    width: 100%; /* Takes the full width of the parent container */
+    overflow: hidden; /* Hides any overflowing parts of the image */
+  }
   
